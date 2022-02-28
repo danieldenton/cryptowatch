@@ -1,1 +1,7 @@
 <h2>Home</h2>
+<% tickers.forEach(ticker => {
+<div id="cryptos-home">
+  <p><%= tickers.symbol %></p>
+  <p><%= tickers.last_trade_price %></p>
+</div>
+<% }) %>

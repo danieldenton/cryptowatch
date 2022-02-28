@@ -4,6 +4,14 @@ This application is for crypto currency investors. It draws from an API from blo
 The user can log in to and have access to a social media style feed where they can post about or share artiles about crypto or crypto related news. They will also be able to edit or delete these posts.<br>
 There will be another page that will be the users personal crypto watch list where they can search a crypto from the API and add to their personal wacth list.<br>
 
+As a user I would like to securely login and have a username so my email isn't on display to all the other users.
+
+As a user I would like view and participate(post/edit/delete) in a social media style feed of crypto related content.
+
+As a user I want to be able to view the current crypto prices on next to the feed as well as on the login page.
+
+As a user I want curate my own crypto watch list on my own personal page that I can edit as I choose.
+
 # ROUTES
 
 -GET API feed to login page<br>
