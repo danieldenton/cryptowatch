@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+body {
+  background-color: black;
+  font-family: Bebas Neue;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#cw {
+  background-color: black;
+  color: red;
+  border: solid 2px yellow;
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#nav-bar {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+}
+
+#ct {
+  color: red;
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border: 2px solid yellow;
+  width: 600px;
+}
+
+#ct-feed {
+  align-self: flex-start;
+  border: 2px solid yellow;
+  width: 600px;
+  height: 1800px;
+}
+
+li {
+  display: inline;
+  padding: 0px 30px;
+}
+
+.links {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+
+.links:hover {
+  color: white;
+}
+
+li {
+  list-style-type: none;
+}
+
+#inline-div {
+  display: inline;
+  border: yellow 2px solid;
+  width: 1180px;
+  height: 1700px;
+}
+
+#cryptos {
+  align-self: flex-end;
+  right: 20px;
+  font-size: 25px;
+  width: 250px;
+  height: 36px;
+  color: red;
+}
+#prices {
+  align-self: flex-end;
+  right: 20px;
+  font-size: 25px;
+  width: 250px;
+  height: 36px;
+  color: red;
+}
+
+#login-box {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 300px;
+  width: 300px;
+  background-color: red;
+  border: 2px solid yellow;
+}
+
+#new-user-form {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 300px;
+  width: 300px;
+  background-color: red;
+  border: 2px solid yellow;
+}
+
+#hello {
+  color: red;
+}
+
+#your-crypto-box {
+  border: 2px yellow solid;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: red;
+  font-size: 40px;
+  width: 300px;
+  height: 300px;
+}

@@ -1,9 +1,17 @@
-<form action="/users" method="POST">
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email">
-
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password">
-
+<div id="new-user-form">
+  <form action="/users" method="POST">
+    <div class="new-input">
+      <label for="email">Email:</label>
+      <input type="email" name="email" class="new-user inputs" />
+    </div>
+    <div class="new-input">
+      <label for="User Name">User Name:</label>
+      <input type="text" name="user-name" class="new-user inputs" />
+    </div>
+    <div class="new-input">
+      <label for="password">Password:</label>
+      <input type="password" name="password" class="new-user inputs" />
+    </div>
     <button type="submit">Sign Up</button>
-</form>
+  </form>
+</div>

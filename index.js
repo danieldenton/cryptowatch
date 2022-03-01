@@ -12,6 +12,7 @@ app.set("view engine", "ejs");
 app.use(ejsLayouts);
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
+app.use("/static", express.static(__dirname + "/static/"));
 
 // AUTHENTICATION MIDDLEWARE
 app.use(async (req, res, next) => {
@@ -32,21 +33,24 @@ app.use("/users", require("./controllers/users"));
 
 // ROUTES
 app.get("/", async (req, res) => {
-  const response = await axios.get(
-    "https://api.blockchain.com/v3/exchange/tickers"
-  );
-  const tickers = response.data
-    .filter((ticker) => {
-      const { symbol } = ticker;
-      return symbol.endsWith("USD") || symbol.endsWith("USDT");
-    })
-    .map((ticker) => ({
-      symbol: ticker.symbol,
-      price: ticker.last_trade_price,
-    }));
-  console.log(tickers);
-  res.send(JSON.stringify(tickers));
-  res.render("home");
+  try {
+    const response = await axios.get(
+      "https://api.blockchain.com/v3/exchange/tickers"
+    );
+    const tickers = response.data
+      .filter((ticker) => {
+        const { symbol } = ticker;
+        return symbol.endsWith("USD") || symbol.endsWith("USDT");
+      })
+      .map((ticker) => ({
+        symbol: ticker.symbol,
+        price: ticker.last_trade_price,
+      }));
+    console.log(tickers);
+    res.render("home.ejs", { tickers });
+  } catch {
+    console.log(error);
+  }
 });
 
 app.listen(8000, () => {

@@ -1,7 +1,24 @@
-<h2>Home</h2>
-<% tickers.forEach(ticker => {
-<div id="cryptos-home">
-  <p><%= tickers.symbol %></p>
-  <p><%= tickers.last_trade_price %></p>
+<div id="inline-div">
+  <div id="talk">
+    <div id="ct">
+      <h2>Crypto Talk</h2>
+    </div>
+    <div id="ct-feed"></div>
+  </div>
+  
+  <div id="cryptos">
+    <% tickers.forEach(ticker => { %>
+    <ul>
+      <li><%= ticker.symbol %></li>
+    </ul>
+    <% }) %>
+  </div>
+  <div id="prices"></div>
+  <% tickers.forEach(ticker => { %>
+  <ul>
+    <li><%= ticker.price %></li>
+  </ul>
+  <% }) %>
 </div>
-<% }) %>
+</div>
+
