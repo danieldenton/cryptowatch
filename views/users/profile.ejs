@@ -1,8 +1,40 @@
-<h2 id="hello"> <%= user.email%></h2>
-<div id="your-crypto-box"
-<form method="GET" action="/results">
+<h2 id="hello"> <%= user.userName %></h2>
+<div id="your-crypto-container">
+<div id="your-crypto-search">
+<form method="GET" action="/users/profile">
   <label for="search">Search</lablel>
-  <input type="text" id="search" name="cryptoSearch" />
-
+  <input type="text" id="search" name="q" />
   <input type="submit" />
 </form>
+<ul>
+  <% tickers.forEach(ticker => { %>
+
+  <li><%= ticker.symbol %> - <%= ticker.price %>
+    <form method="POST" action="/users/profile">
+      <input type="hidden" name="symbol" value="<%= ticker.symbol %> "/>
+      <input type="submit" id="add-watch"/>
+    </form>
+  </li>
+
+  <% }) %>
+  
+</ul>
+</div>
+
+<div id="your-crypto-box">
+  <ul>
+    <% userTickers.forEach(ticker => { %>
+  
+    <li><%= ticker.symbol %> - <%= ticker.price %></li>
+     
+  
+    <% }) %>
+    
+  </ul>
+  
+</div>
+</div>
+
+
+
+

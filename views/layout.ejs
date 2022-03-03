@@ -13,8 +13,10 @@
       <nav>
         <ul id="nav-bar">
           <% if(user){ %>
+          <li><a class="links" href="/">Home</a></li>
           <li><a class="links" href="/users/profile">Your Crypto Watch</a></li>
           <li><a class="links" href="/users/logout">Logout</a></li>
+
           <% } else { %>
           <li><a class="links" href="/users/new">Sign Up</a></li>
           <li><a class="links" href="/users/login">Login</a></li>

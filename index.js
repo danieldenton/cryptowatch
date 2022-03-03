@@ -22,7 +22,9 @@ app.use(async (req, res, next) => {
       process.env.SECRET
     );
     const decryptedIdString = decryptedId.toString(cryptoJS.enc.Utf8);
-    const user = await db.user.findByPk(decryptedIdString);
+    const user = await db.user.findByPk(decryptedIdString, {
+      include: [db.crypto, db.feed],
+    });
     res.locals.user = user;
   } else res.locals.user = null;
   next();
@@ -48,7 +50,7 @@ app.get("/", async (req, res) => {
       }));
     console.log(tickers);
     res.render("home.ejs", { tickers });
-  } catch {
+  } catch (error) {
     console.log(error);
   }
 });

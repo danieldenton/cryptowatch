@@ -1,17 +1,26 @@
 <div id="new-user-form">
-  <form action="/users" method="POST">
+  <form action="/users" method="POST" class="form-align">
     <div class="new-input">
-      <label for="email">Email:</label>
-      <input type="email" name="email" class="new-user inputs" />
+      <input class="inputs" type="email" name="email" placeholder="Email" />
     </div>
     <div class="new-input">
-      <label for="User Name">User Name:</label>
-      <input type="text" name="user-name" class="new-user inputs" />
+      <input
+        class="inputs"
+        type="text"
+        name="userName"
+        placeholder="User Name"
+      />
     </div>
     <div class="new-input">
-      <label for="password">Password:</label>
-      <input type="password" name="password" class="new-user inputs" />
+      <input
+        class="inputs"
+        type="password"
+        name="password"
+        placeholder="Password"
+      />
     </div>
-    <button type="submit">Sign Up</button>
+    <div class="button">
+      <button type="submit">Sign Up</button>
+    </div>
   </form>
 </div>

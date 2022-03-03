@@ -1,0 +1,2 @@
+sequelize model:create --name feed --attributes userId:integer,post:text,date:date
+sequelize model:create --name crypto --attributes userId:integer,symbol:string
