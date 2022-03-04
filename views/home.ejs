@@ -3,7 +3,32 @@
     <div id="ct">
       <h2>Crypto Talk</h2>
     </div>
-    <div id="ct-feed"></div>
+    <div id="ct-feed">
+      <div>
+      <form action="/" method="POST">
+        <label for="Post">Post</lablel>
+          <textarea id="post" name="p"></textarea>  
+          <input type="submit" />
+      </form>
+    </div>
+    <div>
+      <ul>
+        <% posts.forEach(post => { %>
+
+          <li><%= user.userName %>:  <%= post.content %>
+            <form method="POST" action="/<%= post.id %>/?_method=PUT">
+              <input type="text" name="content"/>
+              <button type="submit">Edit</button>
+          </form>
+          <form method="POST" action="/<%= post.id %>/?_method=DELETE">
+            <button type="submit">Delete</button>
+         </form>
+            </li>
+  
+          <% }) %>
+      </ul>
+    </div>
+    </div>
   </div>
 
   <div id="cryptos">

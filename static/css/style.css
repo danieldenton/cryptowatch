@@ -67,6 +67,7 @@ li {
 #ct-feed {
   align-self: flex-start;
   border: 2px solid rgb(0, 123, 255);
+  color: white;
   width: 800px;
   height: 3366px;
 }
@@ -162,6 +163,7 @@ li {
   flex-direction: column;
   border: rgb(0, 123, 255) 2px solid;
   color: chartreuse;
+  font-size: 20px;
   margin: 20px;
   width: 400px;
   height: 700px;

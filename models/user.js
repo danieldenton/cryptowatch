@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       models.user.hasMany(models.crypto);
-      models.user.hasMany(models.feed);
+      models.user.hasMany(models.post);
     }
   }
   user.init(

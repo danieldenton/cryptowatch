@@ -5,6 +5,9 @@ const cryptojs = require("crypto-js");
 require("dotenv").config();
 const bcrypt = require("bcrypt");
 const axios = require("axios");
+const { append } = require("express/lib/response");
+
+// app.use(methodOverride("_method"));
 
 router.get("/new", (req, res) => {
   res.render("users/new.ejs");
@@ -22,6 +25,7 @@ router.post("/", async (req, res) => {
   } else {
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     newUser.password = hashedPassword;
+    newUser.userName = req.body.userName;
     await newUser.save();
     const encryptedUserId = cryptojs.AES.encrypt(
       newUser.id.toString(),
@@ -114,26 +118,6 @@ router.get("/profile", async (req, res) => {
   }
 });
 
-// router.get("/profile", async (req, res) => {
-//   const { q } = req.query;
-//   if (!q) {
-//     res.render("users/profile.ejs", { tickers: [] });
-//     return;
-//   }
-//   try {
-//     const response = await axios.get(
-//       "https://api.blockchain.com/v3/exchange/tickers"
-//     );
-//     const tickers = response.data
-//
-//
-//     // console.log(res.locals.user);
-//     res.render("users/profile.ejs", { tickers });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
-
 router.post("/profile", async (req, res) => {
   try {
     await res.locals.user.createCrypto(req.body);
@@ -143,16 +127,6 @@ router.post("/profile", async (req, res) => {
   }
 });
 
-router.get("/profile", async (req, res) => {
-  try {
-    const profileUser = await db.user.findOne({
-      where: { id: req.params.id },
-      inculde: [db.crypto],
-    });
-    const favorites = await profileUser.getCryptos();
-  } catch (error) {
-    console.log(error);
-  }
-});
+router.delete("/profile");
 
 module.exports = router;
