@@ -15,7 +15,7 @@
       <ul>
         <% posts.forEach(post => { %>
 
-          <li><%= user.userName %>:  <%= post.content %>
+          <li>  <%= post.content %>
             <form method="POST" action="/<%= post.id %>/?_method=PUT">
               <input type="text" name="content"/>
               <button type="submit">Edit</button>

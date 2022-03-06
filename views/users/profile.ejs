@@ -11,7 +11,7 @@
 
   <li><%= ticker.symbol %> - <%= ticker.price %>
     <form method="POST" action="/users/profile">
-      <input type="hidden" name="symbol" value="<%= ticker.symbol %> "/>
+      <input type="hidden" name="symbol" value="<%= ticker.symbol %>"/>
       <input type="submit" id="add-watch"/>
     </form>
   </li>
@@ -25,15 +25,19 @@
   <ul>
     <% userTickers.forEach(ticker => { %>
   
-    <li><%= ticker.symbol %> - <%= ticker.price %><button>delete</button></li>
-     
-  
+    <li><%= ticker.symbol %> - <%= ticker.price %>
+    </form>
+    <form method="POST" action="/users/profile/<%= ticker.symbol %>/?_method=DELETE">
+      <button id="user-crypto-delete" type="submit">Remove</button>
+   </form>
+  </li>
     <% }) %>
     
   </ul>
   
 </div>
 </div>
+
 
 
 

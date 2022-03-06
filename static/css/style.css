@@ -13,7 +13,7 @@ body {
 
 #cw {
   background-color: black;
-  color: #8c00ff;
+  color: #c10606;
   border: solid 2px rgb(0, 123, 255);
   font-size: 100px;
   display: flex;
@@ -22,7 +22,7 @@ body {
 }
 
 #nav-bar {
-  background-color: #8c00ff;
+  background-color: #c10606;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -40,7 +40,6 @@ body {
 }
 
 li {
-  display: inline;
   list-style-type: none;
 }
 
@@ -50,18 +49,20 @@ li {
   justify-content: space-between;
   border: rgb(0, 123, 255) 2px solid;
   width: 1200px;
-  height: 3500px;
+  height: 2700px;
+  overflow: scroll;
 }
 
 #ct {
-  color: #8c00ff;
+  color: #c10606;
   align-self: flex-start;
   display: flex;
   justify-content: center;
-  align-content: center;
-  font-size: 30px;
+  align-items: center;
+  font-size: 40px;
   border: 2px solid rgb(0, 123, 255);
   width: 800px;
+  height: 100px;
 }
 
 #ct-feed {
@@ -69,23 +70,25 @@ li {
   border: 2px solid rgb(0, 123, 255);
   color: white;
   width: 800px;
-  height: 3366px;
+  height: 2566px;
 }
 
 #cryptos {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
   border: 2px solid rgb(0, 123, 255);
-  font-size: 25px;
+  font-size: 35px;
   width: 200px;
-  height: 3500px;
+  height: 2700px;
   color: rgb(220, 220, 92);
 }
 
 #prices {
   border: 2px solid rgb(0, 123, 255);
-  font-size: 25px;
+  font-size: 35px;
   width: 200px;
-  height: 3500px;
+  height: 2700px;
   color: rgb(220, 220, 92);
 }
 
@@ -97,7 +100,7 @@ li {
   align-items: center;
   height: 300px;
   width: 600px;
-  background-color: #8c00ff;
+  background-color: #c10606;
   border: 2px solid rgb(0, 123, 255);
 }
 
@@ -109,7 +112,7 @@ li {
   align-items: center;
   height: 300px;
   width: 600px;
-  background-color: #8c00ff;
+  background-color: #c10606;
   border: 2px solid rgb(0, 123, 255);
 }
 
@@ -133,16 +136,16 @@ li {
 }
 
 #hello {
-  color: #8c00ff;
+  color: #c10606;
 }
 
 #your-crypto-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   border: rgb(0, 123, 255) 2px solid;
   width: 1200px;
-  height: 1700px;
+  height: 600px;
 }
 
 #your-crypto-search {
@@ -150,7 +153,7 @@ li {
   display: flex;
   justify-content: center;
   align-content: center;
-  background-color: #8c00ff;
+  background-color: #c10606;
   margin: 20px;
   font-size: 20px;
   width: 300px;
@@ -162,9 +165,14 @@ li {
   display: flex;
   flex-direction: column;
   border: rgb(0, 123, 255) 2px solid;
-  color: chartreuse;
-  font-size: 20px;
+  color: rgb(220, 220, 92);
+  font-size: 35px;
   margin: 20px;
-  width: 400px;
-  height: 700px;
+  width: 300px;
+  height: 500px;
+}
+#user-crypto-delete {
+  background-color: black;
+  color: #c10606;
+  height: 3vh;
 }

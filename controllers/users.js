@@ -7,8 +7,6 @@ const bcrypt = require("bcrypt");
 const axios = require("axios");
 const { append } = require("express/lib/response");
 
-// app.use(methodOverride("_method"));
-
 router.get("/new", (req, res) => {
   res.render("users/new.ejs");
 });
@@ -43,7 +41,7 @@ router.get("/login", (req, res) => {
 
 router.post("/login", async (req, res) => {
   const user = await db.user.findOne({
-    where: { email: req.body.email, userName: req.body.userName },
+    where: { email: req.body.email },
   });
   if (!user) {
     console.log("user not found");
@@ -94,6 +92,7 @@ async function userCryptoTickers(res, tickers) {
   });
 }
 router.get("/profile", async (req, res) => {
+  console.log(res.locals.user);
   try {
     const { q } = req.query;
     const tickers = await usdTickers();
@@ -106,7 +105,7 @@ router.get("/profile", async (req, res) => {
     } else {
       const searchedTickers = tickers.filter((ticker) => {
         const { symbol } = ticker;
-        return symbol.toLowerCase().startsWith(q.toLowerCase());
+        return symbol.toLowerCase().startsWith(q.toLowerCase().trim());
       });
       res.render("users/profile.ejs", {
         tickers: searchedTickers,
@@ -120,6 +119,7 @@ router.get("/profile", async (req, res) => {
 
 router.post("/profile", async (req, res) => {
   try {
+    console.log(req.body);
     await res.locals.user.createCrypto(req.body);
     res.redirect("/users/profile");
   } catch (error) {
@@ -127,6 +127,16 @@ router.post("/profile", async (req, res) => {
   }
 });
 
-router.delete("/profile");
+router.delete("/profile/:id", async (req, res) => {
+  try {
+    console.log(await db.crypto.findAll());
+    const cryptos = await db.crypto.destroy({
+      where: { symbol: req.params.id },
+    });
+    res.redirect("/users/profile");
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 module.exports = router;

@@ -65,7 +65,8 @@ app.get("/", async (req, res) => {
 app.post("/", async (req, res) => {
   try {
     const newPost = await db.post.create({
-      content: req.body.p,
+      content: res.locals.user.userName + ": " + req.body.p,
+      userId: res.locals.user.id,
     });
     res.redirect("/");
   } catch (error) {
