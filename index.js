@@ -56,7 +56,11 @@ app.get("/", async (req, res) => {
         price: ticker.last_trade_price,
       }));
     console.log(tickers);
-    res.render("home.ejs", { tickers, posts });
+    res.render("home.ejs", {
+      tickers,
+      posts,
+      userId: res.locals.user && res.locals.user.id,
+    });
   } catch (error) {
     console.log(error);
   }
@@ -65,7 +69,7 @@ app.get("/", async (req, res) => {
 app.post("/", async (req, res) => {
   try {
     const newPost = await db.post.create({
-      content: res.locals.user.userName + ": " + req.body.p,
+      content: req.body.p,
       userId: res.locals.user.id,
     });
     res.redirect("/");
@@ -76,10 +80,12 @@ app.post("/", async (req, res) => {
 
 app.put("/:id", async (req, res) => {
   try {
-    const posts = await db.post.update(
-      { content: req.body.content },
-      { where: { id: req.params.id } }
-    );
+    const post = await db.post.findOne({ where: { id: req.params.id } });
+    if (post.userId === res.locals.user.id) {
+      await post.update({
+        content: req.body.content,
+      });
+    }
     res.redirect("/");
   } catch (error) {
     console.log(error);
@@ -87,8 +93,10 @@ app.put("/:id", async (req, res) => {
 });
 app.delete("/:id", async (req, res) => {
   try {
-    console.log(req.params.id);
-    const posts = await db.post.destroy({ where: { id: req.params.id } });
+    const post = await db.post.findOne({ where: { id: req.params.id } });
+    if (post.userId === res.locals.user.id) {
+      await post.destroy();
+    }
     res.redirect("/");
   } catch (error) {
     console.log(error);

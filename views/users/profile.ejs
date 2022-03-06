@@ -28,7 +28,7 @@
     <li><%= ticker.symbol %> - <%= ticker.price %>
     </form>
     <form method="POST" action="/users/profile/<%= ticker.symbol %>/?_method=DELETE">
-      <button id="user-crypto-delete" type="submit">Remove</button>
+      <button class="user-crypto-remove" type="submit">Remove</button>
    </form>
   </li>
     <% }) %>

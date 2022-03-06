@@ -170,9 +170,11 @@ li {
   margin: 20px;
   width: 300px;
   height: 500px;
+  overflow: scroll;
 }
-#user-crypto-delete {
+.user-crypto-remove {
   background-color: black;
   color: #c10606;
   height: 3vh;
+  border: none;
 }

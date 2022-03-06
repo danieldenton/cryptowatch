@@ -4,6 +4,7 @@
       <h2>Crypto Talk</h2>
     </div>
     <div id="ct-feed">
+      <% if(user){ %>
       <div>
       <form action="/" method="POST">
         <label for="Post">Post</lablel>
@@ -11,11 +12,14 @@
           <input type="submit" />
       </form>
     </div>
+    <% } %>
     <div>
       <ul>
         <% posts.forEach(post => { %>
 
-          <li>  <%= post.content %>
+          
+          <li>  <%= post.user.userName %>: <%= post.content %>
+            <% if (post.user.id === userId) { %>
             <form method="POST" action="/<%= post.id %>/?_method=PUT">
               <input type="text" name="content"/>
               <button type="submit">Edit</button>
@@ -23,6 +27,7 @@
           <form method="POST" action="/<%= post.id %>/?_method=DELETE">
             <button type="submit">Delete</button>
          </form>
+        <% } %>
             </li>
   
           <% }) %>
