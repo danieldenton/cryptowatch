@@ -18,10 +18,10 @@
     </div>
     <% } %>
     <div class="posts">
-      <% if (post.user){ %>
+      
       <ul>
         <% posts.forEach(post => { %>
-
+          <% if (post.user){ %>
           <li>  <%= post.user.userName %>: <%= post.content %>
             <% if (post.user.id === userId) { %>
             <form method="POST" action="/<%= post.id %>/?_method=PUT">
@@ -33,10 +33,11 @@
          </form>
         <% } %>
             </li>
+            <% } %>
           <% }) %>
         
       </ul>
-      <% } %>
+     
     </div>
     </div>
   </div>
