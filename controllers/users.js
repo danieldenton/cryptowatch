@@ -13,7 +13,7 @@ router.get("/new", (req, res) => {
 
 router.post("/", async (req, res) => {
   const [newUser, created] = await db.user.findOrCreate({
-    where: { email: req.body.email },
+    where: { userName: req.body.userName },
   });
   if (!created) {
     console.log("user already exists");

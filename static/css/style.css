@@ -65,12 +65,55 @@ li {
   height: 100px;
 }
 
+#post-form {
+  margin-left: 40px;
+  color: rgb(220, 220, 92);
+  height: 70px;
+  width: 740px;
+  display: flex;
+  flex-direction: column;
+}
+
+.posts {
+  margin-top: 60px;
+}
+
+#post {
+  margin: 0px;
+  height: 25px;
+  width: 650px;
+}
+
+#post-submit {
+  background-color: #c10606;
+  color: black;
+  height: 25px;
+  border: none;
+}
+#post-submit:hover {
+  color: white;
+}
+
 #ct-feed {
   align-self: flex-start;
   border: 2px solid rgb(0, 123, 255);
+  font-size: 30px;
   color: white;
   width: 800px;
   height: 2566px;
+}
+
+#edit-window {
+  width: 550px;
+}
+
+.post-deletes {
+}
+
+.put-delete-button {
+  background-color: black;
+  color: #c10606;
+  border: none;
 }
 
 #cryptos {
@@ -151,14 +194,39 @@ li {
 #your-crypto-search {
   border: 2px rgb(0, 123, 255) solid;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   background-color: #c10606;
   margin: 20px;
-  font-size: 20px;
+  font-size: 25px;
   width: 300px;
   height: 300px;
   overflow: scroll;
+}
+
+.crypto-search-text {
+  margin: 0px;
+  padding: 0px;
+  height: 40px;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-button {
+  margin-top: 10px;
+  background-color: black;
+  color: #c10606;
+  border: none;
+}
+
+#search-button:hover {
+  color: white;
 }
 
 #your-crypto-box {

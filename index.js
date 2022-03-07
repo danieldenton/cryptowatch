@@ -42,7 +42,7 @@ app.get("/", async (req, res) => {
     const posts = await db.post.findAll({
       include: [db.user],
     });
-    console.log("posts");
+    posts.reverse();
     const response = await axios.get(
       "https://api.blockchain.com/v3/exchange/tickers"
     );

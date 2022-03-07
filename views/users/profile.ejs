@@ -1,10 +1,21 @@
-<h2 id="hello"> <%= user.userName %></h2>
+<h2 id="hello"> Hello, <%= user.userName %></h2>
 <div id="your-crypto-container">
 <div id="your-crypto-search">
-<form method="GET" action="/users/profile">
-  <label for="search">Search</lablel>
+  <div class="crypto-search-text">
+    Create your own
+    </div>
+    <div class="crypto-search-text">
+      crypto watch list
+    </div>
+    <div class="crypto-search-text">
+      Search here:
+    </div>
+    <div class="crypto-search-text">
+  
+  </div>
+<form id="search-form" method="GET" action="/users/profile">
   <input type="text" id="search" name="q" />
-  <input type="submit" />
+  <input id="search-button" type="submit" />
 </form>
 <ul>
   <% tickers.forEach(ticker => { %>

@@ -5,32 +5,35 @@
     </div>
     <div id="ct-feed">
       <% if(user){ %>
-      <div>
-      <form action="/" method="POST">
-        <label for="Post">Post</lablel>
-          <textarea id="post" name="p"></textarea>  
-          <input type="submit" />
+      <div id="post-form">
+      Put your 2 Satoshis in:
+      <form  action="/" method="POST">
+        <div>
+          <input id="post" type="text" name="p"></input>  
+        </div>
+        <div>
+          <input id="post-submit" type="submit" />
+        </div>
       </form>
     </div>
     <% } %>
-    <div>
+    <div class="posts">
       <ul>
         <% posts.forEach(post => { %>
 
-          
           <li>  <%= post.user.userName %>: <%= post.content %>
             <% if (post.user.id === userId) { %>
             <form method="POST" action="/<%= post.id %>/?_method=PUT">
-              <input type="text" name="content"/>
-              <button type="submit">Edit</button>
+              <input id="edit-window" type="text" name="content"/>
+              <button class="put-delete-button" type="submit">Edit</button>
           </form>
           <form method="POST" action="/<%= post.id %>/?_method=DELETE">
-            <button type="submit">Delete</button>
+            <button class="put-delete-button" type="submit">Delete</button>
          </form>
         <% } %>
             </li>
-  
           <% }) %>
+        
       </ul>
     </div>
     </div>
