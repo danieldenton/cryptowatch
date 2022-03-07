@@ -1,3 +1,4 @@
+<div id="home-container">
 <div id="inline-div">
   <div id="talk">
     <div id="ct">
@@ -22,7 +23,7 @@
       <ul>
         <% posts.forEach(post => { %>
           <% if (post.user){ %>
-          <li>  <%= post.user.userName %>: <%= post.content %>
+          <li>  <p class="users"><%= post.user.userName %>:</p> <%= post.content %>
             <% if (post.user.id === userId) { %>
             <form method="POST" action="/<%= post.id %>/?_method=PUT">
               <input id="edit-window" type="text" name="content"/>
@@ -64,4 +65,5 @@
       </ul>
     </div>
   </div>
+</div>
 </div>

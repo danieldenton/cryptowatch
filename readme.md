@@ -1,7 +1,7 @@
 # CRYPTO WATCH<br>
 
 This application is for crypto currency investors. It draws from an API from blockchain.com.
-The user can log in to and have access to a social media style feed where they can post about or share artiles about crypto or crypto related news. They will also be able to edit or delete these posts.<br>
+The user can log in to and have access to a social media style feed where they can post about or crypto or crypto related news. They will also be able to edit or delete these posts.<br>
 There will be another page that will be the users personal crypto watch list where they can search a crypto from the API and add to their personal wacth list.<br>
 
 As a user I would like to securely login and have a username so my email isn't on display to all the other users.
