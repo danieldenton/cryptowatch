@@ -12,6 +12,16 @@ As a user I want to be able to view the current crypto prices on next to the fee
 
 As a user I want curate my own crypto watch list on my own personal page that I can edit as I choose.
 
+# INSTALATION
+
+-fork and clone<br>
+-run npm install<br>
+-set up a .env with SECRET=whateversecret
+
+# LINK
+
+https://yourcryptowatch.herokuapp.com/
+
 # ROUTES
 
 -GET API feed to login page<br>
