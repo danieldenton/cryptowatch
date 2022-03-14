@@ -17,6 +17,7 @@ As a user I want curate my own crypto watch list on my own personal page that I 
 -fork and clone<br>
 -run npm install<br>
 -set up a .env with SECRET=whateversecret<br>
+-no API key is needed
 
 # LINK
 
